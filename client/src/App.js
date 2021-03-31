@@ -1,6 +1,15 @@
 import "./App.css";
 import React from "react";
 
+const approval = [
+  { id: 1,
+    departmentID: 1,
+    userID: 1,
+    approvedOn: 2020-01-01,
+  },
+];
+
+
 const permissions = [
   { id: 1, name: "admin" },
   { id: 2, name: "standard" },
@@ -17,12 +26,12 @@ const departments = [
   { id: 2, name: "engineering" },
   { id: 3, name: "banking" },
   { id: 4, name: "finance" },
-  { id: 5, name: "client services" },
-  { id: 6, name: "credit" },
-  { id: 7, name: "operations" },
-  { id: 8, name: "risk and compliance" },
-  { id: 9, name: "hr" },
-  { id: 10, name: "it security" },
+  { id: 5, name: "client services", code: "CS" },
+  { id: 6, name: "credit", code: "CREDIT" },
+  { id: 7, name: "operations", code: "BANKOPS" },
+  { id: 8, name: "risk and compliance", code:"RISK" },
+  { id: 9, name: "humnan resources", code: "HR" },
+  { id: 10, name: "it security", code: "ITSEC" },
 ];
 
 const applications = [
@@ -30,10 +39,11 @@ const applications = [
   {
     id: 1,
     name: "zendesk",
-    users: [{ id: 1, permission: 1 }],
+    users: [{ id: 1, permission: 1 }], 
     riskrating: 1,
     totalLicenses: 30,
-    active: "yes",
+    activationDate: "2018-05-05",
+    decommissionDate: "2019-05-05",
   },
   {
     id: 2,
@@ -44,7 +54,9 @@ const applications = [
     ],
     riskrating: 3,
     totalLicenses: 200,
-    active: "yes",
+    activationDate: "2018-05-05",
+    decommissionDate: "2999-01-01",
+
   },
   {
     id: 3,
@@ -55,7 +67,8 @@ const applications = [
     ],
     riskrating: 3,
     totalLicenses: 55,
-    active: "yes",
+    activationDate: "2018-06-05",
+    decommissionDate: "2999-01-01",
   },
   {
     id: 4,
@@ -63,7 +76,8 @@ const applications = [
     users: [{ id: 1, permission: 1 }],
     riskrating: 3,
     totalLicenses: 50,
-    active: "no",
+    activationDate: "2018-05-05",
+    decommissionDate: "2019-01-01",
   },
 ];
 
@@ -73,18 +87,24 @@ const users = [
     id: 1,
     name: "ceejay989",
     department: 1,
+    isManager: true,
+    password: "123",
     active: "yes",
   },
   {
     id: 2,
     name: "megathyne",
     department: 2,
+    isManager: true,
+    password: "123",
     active: "yes",
   },
   {
     id: 3,
     name: "epark",
     department: 1,
+    isManager: false,
+    password: "",
     active: "no",
   },
 ];
