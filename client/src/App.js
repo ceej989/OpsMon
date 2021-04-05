@@ -9,12 +9,36 @@ const approval = [
   },
 ];
 
+const permission_type = [
+  { id: 1, code: "GENERIC", name: "Generic"},
+  { id: 2, code: "ACCESS_LEVEL", name: "Access Level"},
+  { id: 3, code: "WORKFLOW_ACCESS", name: "Workflow Access"},
+  { id: 4, code: "DATA_SHARING", name: "Data sharing"},
+]
 
 const permissions = [
-  { id: 1, name: "admin" },
-  { id: 2, name: "standard" },
+  { id: 1, applicationId: 1, permission_type_id: 1, name: "admin" },
+  { id: 2, applicationId: 1, permission_type_id: 1, name: "standard" },
+  { id: 3, applicationId: 2, permission_type_id: 1, name: "admin" },
+  { id: 4, applicationId: 2, permission_type_id: 1, name: "standard" },
+  { id: 5, applicationId: 5, permission_type_id: 2, name: "primary" },
+  { id: 6, applicationId: 5, permission_type_id: 2, name: "supervisor" },
+  { id: 7, applicationId: 5, permission_type_id: 2, name: "user" },
+  { id: 8, applicationId: 5, permission_type_id: 2, name: "non-user" },
+  { id: 9, applicationId: 5, permission_type_id: 3, name: "read-only"},
+  { id: 10, applicationId: 5, permission_type_id: 3, name: "setup_and_user"},
+  { id: 11, applicationId: 5, permission_type_id: 3, name: "user"},
+  { id: 12, applicationId: 5, permission_type_id: 3, name: "non-user"},
+  { id: 13, applicationId: 5, permission_type_id: 4, name: "no"},
+  { id: 14, applicationId: 5, permission_type_id: 4, name: "yes"},
 ];
 
+const user_permissions = [
+  {id: 1, userId: 1, permissionId: 1},
+  {id: 2, userId: 2, permissionId: 2},
+  {id: 3, userId: 1, permissionId: 6},
+  {id: 4, userId: 2, permissionId: 4}
+]
 const riskratings = [
   { id: 1, name: "high" },
   { id: 2, name: "medium" },
@@ -79,6 +103,15 @@ const applications = [
     activationDate: "2018-05-05",
     decommissionDate: "2019-01-01",
   },
+  {
+  id: 5,
+  name: "sageworks",
+  users: [{ id: 1, permission: 1 }],
+  riskrating: 1,
+  totalLicenses: 50,
+  activationDate: "2018-05-05",
+  decommissionDate: "2019-01-01",
+},
 ];
 
 const users = [
